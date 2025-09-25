@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // Вариант2 :
 //
 // Напишите функцию isValid, которая принимает строку s, состоящую только из символов '(', ')', '{', '}', '[' и ']',
@@ -14,7 +16,7 @@ package main
 
 func main() {
 	str1 := "([{}])"
-	checkCorrect(str1)
+	fmt.Println(checkCorrect(str1))
 }
 
 func checkCorrect(str1 string) bool {
@@ -44,7 +46,7 @@ func checkCorrect(str1 string) bool {
 		}
 		if closes[itv] {
 			pop := stack.Pop()
-			if pop != itv {
+			if m[pop] != itv {
 				return false
 			}
 		}
